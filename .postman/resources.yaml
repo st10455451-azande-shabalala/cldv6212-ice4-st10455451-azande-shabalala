@@ -1,0 +1,8 @@
+# Use this workspace to collaborate
+workspace:
+  id: 71a0e7c4-5935-4d63-81e8-c6b9d33e27c6
+
+localResources:
+  collections:
+    - ../CoffeeNChill.Functions/Docs/CoffeeNChill - Part
+      1.postman_collection.json
