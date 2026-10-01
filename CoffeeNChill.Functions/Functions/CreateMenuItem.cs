@@ -45,17 +45,24 @@ namespace CoffeeNChill.Functions.Functions
             }
 
             // valadtion used to check that are fields are completed and correct before storing it
-            if (dto is null
-                || string.IsNullOrWhiteSpace(dto.Category)
-                || string.IsNullOrWhiteSpace(dto.Sku)
-                || string.IsNullOrWhiteSpace(dto.Name)
-                || dto.Price < 0)
+            // if (dto is null
+            //     || string.IsNullOrWhiteSpace(dto.Category)
+            //     || string.IsNullOrWhiteSpace(dto.Sku)
+            //     || string.IsNullOrWhiteSpace(dto.Name)
+            //     || dto.Price < 0)
+            // {
+            //     var badRequest = req.CreateResponse(HttpStatusCode.BadRequest);
+            //     await badRequest.WriteAsJsonAsync(new
+            //     {
+            //         error = "Category, Sku, and Name are required, and Price cannot be a negative value"
+            //     });
+            //     return badRequest;
+            // }
+
+            if (!MenuItemValidator.IsValid(dto, out var validationError))
             {
                 var badRequest = req.CreateResponse(HttpStatusCode.BadRequest);
-                await badRequest.WriteAsJsonAsync(new
-                {
-                    error = "Category, Sku, and Name are required, and Price cannot be a negative value"
-                });
+                await badRequest.WriteAsJsonAsync(new { error = validationError });
                 return badRequest;
             }
 

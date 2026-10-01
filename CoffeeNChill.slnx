@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/CoffeeNChill.Functions/">
+    <Project Path="CoffeeNChill.Functions/CoffeeNChill_Functions.csproj" />
+  </Folder>
+  <Project Path="CoffeeNChill.Functions.Tests/CoffeeNChill.Functions.Tests.csproj" />
+</Solution>
