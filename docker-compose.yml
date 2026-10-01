@@ -1,4 +1,3 @@
-version: "3.8"
 
 services:
   azurite:
@@ -10,7 +9,7 @@ services:
     restart: unless-stopped
 
   functions:
-    image: st10455451/coffeenchill-functions:v1.0
+    image: st10455451/coffeenchill-functions:latest
     ports:
       - "7071:80"
     environment:
